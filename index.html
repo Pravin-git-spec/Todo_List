@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Todo List App</title>
+        
+        <style>
+            
+            body{
+                background-color: purple;
+            }
+            h1{
+                color: rgb(251, 253, 255);
+                font-family: 'Times New Roman', Times, serif;
+            }
+            li{
+                color: rgb(251, 253, 255);
+                font-weight:500;
+                font-family:cursive;
+            }
+        </style>
+    </head>
+    <body>
+        <center style="margin-top: 15%;">
+            <h1>Today Do's List</h1>
+            <input type="text" id="zero"/>
+            <button id="one" onclick="add()" style="border-radius: 8px;border: 1px solid black;box-shadow: 0 2px rgb(178, 170, 170);">Add Task</button><br>
+            <ul></ul>
+        </center>
+        
+        <script>
+            function add(){
+                var ul = document.querySelector("ul")
+                var con = document.getElementById("zero").value
+                console.log(con)
+                var n = document.createElement("li")
+                n.innerHTML = con + " " + "<button onclick='del(event)' style='border-radius:8px;border:1px solid black;box-shadow: 0 2px rgb(178, 170, 170);'>Completed</button>"
+                ul.append(n)
+                
+            }
+            function del(event){
+                event.target.parentElement.remove()
+            }
+        </script>
+    </body>
+</html>
